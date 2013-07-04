@@ -39,9 +39,9 @@ or
 
 #Public API
 
-##p.weibo_login(account, cb)
+p.weibo_login(account, cb)
 
-###account
+account
 
 + name: 登录名字
 + passwd: 密码
