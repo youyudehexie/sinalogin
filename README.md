@@ -1,4 +1,4 @@
-sinalogin
+Sinalogin
 =========
 
 Node.js微博模拟登录
@@ -18,30 +18,31 @@ or
 
 #Example
 
-var Sinalogin = require('../lib'); // or var Sinalogin = require('sinalogin');
-var request = require('request');
-
-var account = {
-	name: '*@qq.com',
-	passwd: '*',
-	cookiefile: '*@qq.com.dat'
-}
-
-Sinalogin.weibo_login(account, function(err, loginInfo){
-	if(loginInfo.logined){
-		var j = loginInfo.j;
-
-		request({url: 'http://weibo.com/youyudehexie?wvr=5&wvr=5&lf=reg', jar: j}, function (err, response, body) {
-		  console.log(body)
-		});
+	var Sinalogin = require('../lib'); // or var Sinalogin = require('sinalogin');
+	var request = require('request');
+	
+	var account = {
+		name: '*@qq.com',
+		passwd: '*',
+		cookiefile: '*@qq.com.dat'
 	}
-});
+	
+	Sinalogin.weibo_login(account, function(err, loginInfo){
+		if(loginInfo.logined){
+			var j = loginInfo.j;
+	
+			request({url: 'http://weibo.com/youyudehexie?wvr=5&wvr=5&lf=reg', jar: j}, function (err, response, body) {
+			  console.log(body)
+			});
+		}
+	});
 
 #Public API
 
 ##p.weibo_login(account, cb)
 
-account
+###account
+
 + name: 登录名字
 + passwd: 密码
 + cookiefile: 生成的目标cookie文件，方便下次使用的时候直接调用而不用重新认证
