@@ -2,10 +2,12 @@ var Sinalogin = require('../lib');
 var request = require('request');
 
 var account = {
-	name: '*@qq.com',
-	passwd: '*',
-	cookiefile: '*@qq.com.dat'
+	name: '405574395@qq.com',
+	passwd: 'lizhengfu123',
+	cookiefile: '405574395@qq.com.dat'
 }
+
+
 
 Sinalogin.weibo_login(account, function(err, loginInfo){
 	if(loginInfo.logined){
